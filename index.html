@@ -67,9 +67,11 @@
             renderer.xr = new THREE.WebXRManager(options, displays, renderer, camera, scene, update);
             renderer.xr.addEventListener('sessionStarted', sessionStarted);
 
+            console.log(renderer);
         }
 
         function sessionStarted(data) {
+            console.log(data);
             activeRealityType = data.session.realityType;
         }
 
