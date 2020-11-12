@@ -103,7 +103,11 @@
             console.log(status);
 
             const animate = () => {
-                requestAnimationFrame(animate);
+                if (requestAnimationFrame) {
+                    requestAnimationFrame(animate);
+                } else {
+                    webkitRequestAnimationFrame(animate);
+                }
                 renderer.render(scene, camera);
             }
 
