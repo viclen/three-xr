@@ -101,6 +101,7 @@
             name: "camera"
         }).then((status) => {
             console.log(status);
+            console.log(renderer);
 
             const animate = () => {
                 if (requestAnimationFrame) {
@@ -108,13 +109,11 @@
                 } else {
                     webkitRequestAnimationFrame(animate);
                 }
-                renderer.render(scene, camera);
+                console.log(renderer.render(scene, camera));
             }
 
             animate();
-
-            console.log(renderer);
-        })
+        });
     </script>
 </body>
 
